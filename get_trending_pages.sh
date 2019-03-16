@@ -16,3 +16,11 @@ curl ${BASE_URL}"?since=monthly" -o ${DIR}/pages/${DATE_STR}-repositories-month.
 curl ${BASE_URL}"/developers" -o ${DIR}/pages/${DATE_STR}-developers-day.html
 curl ${BASE_URL}"/developers?since=weekly" -o ${DIR}/pages/${DATE_STR}-developers-week.html
 curl ${BASE_URL}"/developers?since=monthly" -o ${DIR}/pages/${DATE_STR}-developers-month.html
+
+# Git
+pushd $DIR
+git add ./pages/
+git commit -m "Add pages for ${DATE_STR}"
+git push
+popd
+
